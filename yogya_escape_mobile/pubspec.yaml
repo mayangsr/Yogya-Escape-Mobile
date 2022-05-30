@@ -57,6 +57,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - img/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -67,6 +69,14 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+  fonts:
+    - family: italiana     
+      fonts:
+        - asset: font/Italiana.ttf
+    - family: robotoSlab
+      fonts:
+      - asset: font/roboto slab.ttf
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
