@@ -95,7 +95,6 @@ class SecondScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          // Within the SecondScreen widget
           onPressed: () {
             // Navigate back to the first screen by popping the current route
             // off the stack.
