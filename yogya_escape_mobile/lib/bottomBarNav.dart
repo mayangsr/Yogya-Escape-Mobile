@@ -34,7 +34,17 @@ class _MainBottomClassState extends State<MainBottomClass> {
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30)
+        ),
+        boxShadow: [BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10)],
+      ),
+      child: ClipRRect(borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30.0),
+      ),
+      child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -69,6 +79,8 @@ class _MainBottomClassState extends State<MainBottomClass> {
         unselectedItemColor: Colors.grey,
         unselectedLabelStyle: TextStyle(fontSize: 12),
       ),
+      ),
+    ),
     );
   }
 }
