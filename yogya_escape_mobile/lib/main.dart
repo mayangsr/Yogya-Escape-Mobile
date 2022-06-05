@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'articles.dart';
+import 'bottomBarNav.dart';
 void main() {
   runApp(MyApp());
 }
@@ -16,9 +17,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => const FirstScreen(),
+        '/': (context) => const FirstScreen(), 
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const SecondScreen(),
+        '/articles': (context) => Articles(),
+        '/home':(context) => MainBottomClass()
       },
     );
   }
@@ -68,7 +71,7 @@ class FirstScreen extends StatelessWidget {
                           fixedSize: Size(117, 43)
                         ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/second');
+                        Navigator.pushNamed(context, '/home');
                       },
                       child: const Text("Let's Go", style: TextStyle(color: Color.fromRGBO(0, 139, 92, 1), fontSize: 20, fontFamily: 'robotoSlab'),),
                       ),
