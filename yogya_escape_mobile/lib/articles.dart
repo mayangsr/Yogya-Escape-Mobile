@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:yogya_escape_mobile/main.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:yogya_escape_mobile/article_model.dart';
+
+Future<List<Post>> fetchPost() async {
+  final response =
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+
+  if (response.statusCode == 200) {
+    final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
+
+    return parsed.map<Post>((json) => Post.fromMap(json)).toList();
+  } else {
+    throw Exception('Failed to load data');
+  }
+}
 
 class Articles extends StatefulWidget {
   const Articles({Key? key}) : super(key: key);
@@ -11,35 +25,66 @@ class Articles extends StatefulWidget {
 }
 
 class _ArticlesState extends State<Articles> {
- List<String> images = [
-   "assets/images/scenary.jpg",
-   "assets/images/scenary_red.jpg",
-   "assets/images/waterfall.jpg",
-   "assets/images/tree.jpg",
- ];
+  late Future<List<Post>> futurePost;
+
+  @override
+  void initState() {
+    super.initState();
+    futurePost = fetchPost();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'robotoSlab', scaffoldBackgroundColor: Color.fromRGBO(245, 245, 245, 1.0)),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
       appBar: AppBar(
-        title: Text("Articles", style: TextStyle(color: Color.fromRGBO(0, 139, 92, 1), fontSize: 25, fontFamily: 'robotoSlab'),),
-        backgroundColor: Colors.white,
+        title: Text("Articles", style: TextStyle(color: Color.fromRGBO(0, 139, 92, 1), fontSize: 32, fontFamily: 'robotoSlab'),),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemBuilder: (BuildContext, index){
-          return Card(
-            child: ListTile(
-              leading: CircleAvatar(backgroundImage: AssetImage(images[index]),),
-              title: Text("This is title"),
-              subtitle: Text("This is subtitle"),
-            ),
-          );
-        },
-        itemCount: images.length,
-        shrinkWrap: true,
-        padding: EdgeInsets.all(10.0),
-        scrollDirection: Axis.vertical,
-      )
+        body: FutureBuilder<List<Post>>(
+          future: futurePost,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (_, index) => Container(
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "${snapshot.data![index].title}",
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromRGBO(0, 139, 92, 1)
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text("${snapshot.data![index].completed}"),
+                        Text("Posted by Me, on May 30")
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            } else {
+              return Center(child: CircularProgressIndicator());
+            }
+          },
+        ),
+      ),
     );
   }
 }

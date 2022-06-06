@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Yogya Escape',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Color.fromRGBO(245, 245, 245, 1.0)
       ),
       initialRoute: '/',
       routes: {
