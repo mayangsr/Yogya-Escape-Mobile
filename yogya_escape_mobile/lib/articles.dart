@@ -6,7 +6,7 @@ import 'package:yogya_escape_mobile/article_model.dart';
 
 Future<List<Post>> fetchPost() async {
   final response =
-      await http.get(Uri.parse('https://mocki.io/v1/0992d3a6-918e-4f08-a474-06e3b3555b89'));
+      await http.get(Uri.parse('https://mocki.io/v1/fb289965-db6b-45ef-bcc8-a4be11944061'));
 
   if (response.statusCode == 200) {
     final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
@@ -80,7 +80,7 @@ class _ArticlesState extends State<Articles> {
                 ),
               );
             } else {
-              return Center(child: CircularProgressIndicator());
+              return Center(child: CircularProgressIndicator(color: Color.fromRGBO(0, 139, 92, 1),));
             }
           },
         ),
