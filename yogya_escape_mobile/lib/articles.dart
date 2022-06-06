@@ -6,7 +6,7 @@ import 'package:yogya_escape_mobile/article_model.dart';
 
 Future<List<Post>> fetchPost() async {
   final response =
-      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+      await http.get(Uri.parse('https://mocki.io/v1/0992d3a6-918e-4f08-a474-06e3b3555b89'));
 
   if (response.statusCode == 200) {
     final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
@@ -64,7 +64,7 @@ class _ArticlesState extends State<Articles> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "${snapshot.data![index].title}",
+                          "${snapshot.data![index].nama}",
                           style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
@@ -72,7 +72,7 @@ class _ArticlesState extends State<Articles> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        Text("${snapshot.data![index].completed}"),
+                        Text("${snapshot.data![index].lokasi}"),
                         Text("Posted by Me, on May 30")
                       ],
                     ),

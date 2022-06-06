@@ -5,22 +5,25 @@ List<Post> postFromJson(String str) =>
 
 class Post {
   Post({
-    required this.userId,
     required this.id,
-    required this.title,
-    required this.completed,
+    required this.nama,
+    required this.lokasi,
+    required this.image,
+    required this.deskripsi,
   });
 
-  int userId;
-  int id;
-  String title;
-  bool completed;
+  String id;
+  String nama;
+  String lokasi;
+  String image;
+  String deskripsi;
 
   factory Post.fromMap(Map<String, dynamic> json) => Post(
-        userId: json["userId"],
         id: json["id"],
-        title: json["title"],
-        completed: json["completed"],
+        nama: json["nama"],
+        lokasi: json["lokasi"],
+        image: json["image"],
+        deskripsi: json["deskripsi"],
       );
 }
 
