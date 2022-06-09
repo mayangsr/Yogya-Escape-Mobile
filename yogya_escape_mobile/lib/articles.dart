@@ -8,7 +8,7 @@ import 'article_detail.dart';
 
 Future<List<Post>> fetchPost() async {
   final response =
-      await http.get(Uri.parse('https://mocki.io/v1/2ee56731-2b3c-4f8f-b401-d85153375d44'));
+      await http.get(Uri.parse('https://mocki.io/v1/96453721-423c-4dde-976e-ebe5dab93c88'));
 
   if (response.statusCode == 200) {
     final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
@@ -83,9 +83,11 @@ class _ArticlesState extends State<Articles> {
                               color: Color.fromRGBO(0, 139, 92, 1)
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: 5),
                           Text("${snapshot.data![index].lokasi}"),
-                          Text("Posted by Me, on May 30")
+                          SizedBox(height: 10),
+                          Text("Posted by ${snapshot.data![index].author}, on ${snapshot.data![index].tanggal}",
+                          style: TextStyle(fontWeight: FontWeight.w800),)
                         ],
                       ),
                     ),
