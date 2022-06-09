@@ -10,6 +10,8 @@ class Post {
     required this.lokasi,
     required this.image,
     required this.deskripsi,
+    required this.author,
+    required this.tanggal,
   });
 
   String id;
@@ -17,6 +19,8 @@ class Post {
   String lokasi;
   String image;
   String deskripsi;
+  String author;
+  String tanggal;
 
   factory Post.fromMap(Map<String, dynamic> json) => Post(
         id: json["id"],
@@ -24,6 +28,8 @@ class Post {
         lokasi: json["lokasi"],
         image: json["image"],
         deskripsi: json["deskripsi"],
+        author: json["author"],
+        tanggal: json["tanggal"]
       );
 }
 
