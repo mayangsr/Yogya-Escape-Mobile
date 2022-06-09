@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:yogya_escape_mobile/article_detail.dart';
 import 'package:yogya_escape_mobile/article_model.dart';
+import 'article_detail.dart';
 
 Future<List<Post>> fetchPost() async {
   final response =
-      await http.get(Uri.parse('https://mocki.io/v1/fb289965-db6b-45ef-bcc8-a4be11944061'));
+      await http.get(Uri.parse('https://mocki.io/v1/2ee56731-2b3c-4f8f-b401-d85153375d44'));
 
   if (response.statusCode == 200) {
     final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
@@ -51,33 +53,45 @@ class _ArticlesState extends State<Articles> {
             if (snapshot.hasData) {
               return ListView.builder(
                 itemCount: snapshot.data!.length,
-                itemBuilder: (_, index) => Container(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    padding: EdgeInsets.all(20.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "${snapshot.data![index].nama}",
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromRGBO(0, 139, 92, 1)
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Text("${snapshot.data![index].lokasi}"),
-                        Text("Posted by Me, on May 30")
-                      ],
-                    ),
-                  ),
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ArticleDetail(),
+                        settings: RouteSettings(arguments: snapshot.data![index])
                 ),
+              );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      padding: EdgeInsets.all(20.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "${snapshot.data![index].nama}",
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(0, 139, 92, 1)
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text("${snapshot.data![index].lokasi}"),
+                          Text("Posted by Me, on May 30")
+                        ],
+                      ),
+                    ),
+                  );
+                },
+                
               );
             } else {
               return Center(child: CircularProgressIndicator(color: Color.fromRGBO(0, 139, 92, 1),));
@@ -88,3 +102,4 @@ class _ArticlesState extends State<Articles> {
     );
   }
 }
+
