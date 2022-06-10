@@ -1,5 +1,6 @@
 import 'package:yogya_escape_mobile/main.dart';
 import 'package:yogya_escape_mobile/articles.dart';
+import 'package:yogya_escape_mobile/home.dart';
 import 'package:flutter/material.dart';
 
 class MainBottomClass extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MainBottomClassState extends State<MainBottomClass> {
 
   //list of widgets to call ontap
   final widgetOptions = [
-    new SecondScreen(), //isi punya klean
+    new home(), //isi punya klean
     new SecondScreen(), //isi punya klean
     new SecondScreen(), //isi punya klean
     new Articles(),
