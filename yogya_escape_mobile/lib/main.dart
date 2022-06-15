@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'articles.dart';
+import 'home.dart';
 import 'bottomBarNav.dart';
+
 void main() {
   runApp(MyApp());
 }
