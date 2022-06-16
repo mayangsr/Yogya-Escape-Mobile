@@ -3,6 +3,8 @@ import 'package:yogya_escape_mobile/articles.dart';
 import 'package:yogya_escape_mobile/home.dart';
 import 'package:flutter/material.dart';
 
+//  referensi: https://www.fluttertpoint.com/bottom-navigation-in-flutter#:~:text=Bottom%20Navigation%20Bar%20In%20Flutter,the%20name%20or%20the%20icon.&text=We%20creates%20the%20routes%20at%20the%20bottom%20of%20the%20screen.
+
 class MainBottomClass extends StatefulWidget {
   const MainBottomClass({Key? key}) : super(key: key);
 
@@ -15,7 +17,7 @@ class _MainBottomClassState extends State<MainBottomClass> {
 
   //list of widgets to call ontap
   final widgetOptions = [
-    new home(), //isi punya klean
+    new home(), 
     new SecondScreen(), //isi punya klean
     new SecondScreen(), //isi punya klean
     new Articles(),

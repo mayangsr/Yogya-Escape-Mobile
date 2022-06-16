@@ -33,3 +33,5 @@ class Post {
       );
 }
 
+// referensi: https://www.codewithflutter.com/flutter-fetch-data-from-api-rest-api-example/
+

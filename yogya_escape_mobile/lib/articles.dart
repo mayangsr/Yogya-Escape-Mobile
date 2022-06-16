@@ -6,6 +6,8 @@ import 'package:yogya_escape_mobile/article_detail.dart';
 import 'package:yogya_escape_mobile/article_model.dart';
 import 'article_detail.dart';
 
+// referensi: https://www.codewithflutter.com/flutter-fetch-data-from-api-rest-api-example/
+
 Future<List<Post>> fetchPost() async {
   final response =
       await http.get(Uri.parse('https://mocki.io/v1/96453721-423c-4dde-976e-ebe5dab93c88'));

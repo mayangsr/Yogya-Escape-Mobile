@@ -5,6 +5,8 @@ import 'package:yogya_escape_mobile/article_model.dart';
 import 'package:yogya_escape_mobile/articles.dart';
 import 'package:yogya_escape_mobile/main.dart';
 
+// referensi: https://github.com/olayemii/flutter-ui-kits/tree/main/language_learning_ui
+
 class ArticleDetail extends StatelessWidget {
   const ArticleDetail({Key? key}) : super(key: key);
 
@@ -42,7 +44,6 @@ class ArticleDetail extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14.0,
                     fontWeight: FontWeight.w600,
-                    // color: Constants.primaryTextColor,
                   ),
                 ),
               ),
@@ -53,7 +54,6 @@ class ArticleDetail extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 15.0,
-                  // color: Constants.captionTextColor,
                 ),
               ),
               SizedBox(
