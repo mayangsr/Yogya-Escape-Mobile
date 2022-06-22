@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yogya_escape_mobile/gallery.dart';
 import 'articles.dart';
 import 'home.dart';
 import 'bottomBarNav.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/second': (context) => const SecondScreen(),
         '/articles': (context) => Articles(),
         '/home':(context) => MainBottomClass(),
-        '/home1': (context) => home()
+        '/home1': (context) => home(),
+        'gallery': (context) => HomePage()
       },
     );
   }
