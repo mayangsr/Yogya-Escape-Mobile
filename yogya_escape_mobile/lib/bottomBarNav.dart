@@ -1,3 +1,4 @@
+import 'package:yogya_escape_mobile/gallery.dart';
 import 'package:yogya_escape_mobile/main.dart';
 import 'package:yogya_escape_mobile/articles.dart';
 import 'package:yogya_escape_mobile/home.dart';
@@ -19,7 +20,7 @@ class _MainBottomClassState extends State<MainBottomClass> {
   //list of widgets to call ontap
   final widgetOptions = [
     new home(), 
-    new SecondScreen(), //isi punya klean
+    new HomePage(), //isi punya klean
     new SecondScreen(), //isi punya klean
     new Articles(),
     new Maps()
