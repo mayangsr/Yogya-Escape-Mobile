@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:yogya_escape_mobile/listGuide.dart';
 import 'package:yogya_escape_mobile/listFavGuide.dart';
-=======
-import 'package:turgaid/listGuide.dart';
-import 'package:turgaid/listFavGuide.dart';
->>>>>>> c500ae5f1ef554e0f088c0fdade89f23c52190b8
 
 class tourguidePage extends StatelessWidget {
   final List _posts = [
