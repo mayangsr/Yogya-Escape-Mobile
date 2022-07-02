@@ -19,8 +19,11 @@ class PlaceItem extends StatelessWidget {
           fit: BoxFit.cover
           )
       ),
-      child: Padding(
+      child: Container(
         padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16)
+        ),
         child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
