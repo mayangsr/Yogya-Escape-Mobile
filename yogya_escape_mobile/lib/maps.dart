@@ -21,11 +21,14 @@ var points = [
 @override
 Widget build(BuildContext context) {
 return Scaffold(
-appBar: AppBar(),
+  appBar: AppBar(
+        title: Text("Maps", style: TextStyle(color: Color.fromRGBO(0, 139, 92, 1), fontSize: 32, fontFamily: 'robotoSlab'),),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        centerTitle: true,),
   body: 
-  
-  
-  FlutterMap(
+  Container(
+    child:   FlutterMap(
     options: MapOptions(
       center: latlng.LatLng(-7.797068, 110.370529),
       minZoom: 10.0,
@@ -40,6 +43,7 @@ appBar: AppBar(),
       'id': 'mapbox.mapbox-streets-v8'
     },
       ),
+      
       MarkerLayerOptions(
         markers: [
           Marker(
@@ -47,26 +51,58 @@ appBar: AppBar(),
             height: 80,
             point: latlng.LatLng(-7.7705363,110.4872271,),
             builder: (ctx) => Container(
-            child: Icon(Icons.location_on),
-            ),
-            
+            child: Icon(Icons.location_on, color: Colors.red),
+            ), 
           ),
           Marker(
             width: 80,
             height: 80,
             point: points[0],
             builder: (ctx) => Container(
-            child: Icon(Icons.location_on),
-            ),
-            
+            child: Icon(Icons.location_on, color: Colors.red),
+            ), 
           ),
+          Marker(
+            width: 80,
+            height: 80,
+            point: points[1],
+            builder: (ctx) => Container(
+            child: Icon(Icons.location_on, color: Colors.red,),
+            ),
+          ),
+                    Marker(
+            width: 80,
+            height: 80,
+            point: points[2],
+            builder: (ctx) => Container(
+            child: Icon(Icons.location_on, color: Colors.red,),
+            ),
+          ),
+          Marker(
+            width: 80,
+            height: 80,
+            point: points[3],
+            builder: (ctx) => Container(
+            child: Icon(Icons.location_on, color: Colors.red,),
+            ),
+          ),   
+          Marker(
+            width: 80,
+            height: 80,
+            point: points[4],
+            builder: (ctx) => Container(
+            child: Icon(Icons.location_on, color: Colors.red,),
+            ),
+          ),                 
           ],
         ),
         // new PolylineLayerOptions(polylines: [new Polyline(points: points, strokeWidth: 2.0, color:
         // Colors.red)
         // ])
         ],
-        ));
+        ),
+  )
+);
         }
     
   }
