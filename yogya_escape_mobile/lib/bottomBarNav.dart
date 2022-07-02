@@ -20,7 +20,7 @@ class _MainBottomClassState extends State<MainBottomClass> {
   //list of widgets to call ontap
   final widgetOptions = [
     new home(), 
-    new home(), //isi punya klean
+    new gallery(), //isi punya klean
     new SecondScreen(), //isi punya klean
     new Articles(),
     new Maps()
