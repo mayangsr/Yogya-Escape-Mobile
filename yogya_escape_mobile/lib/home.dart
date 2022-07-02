@@ -62,7 +62,7 @@
                       if(i == 'img/image-1.jpg')
                         Container(
                           child: Column(children: [
-                            Text("Pantai Baron", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
+                            Text("Pantai Ngitun", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
                             Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
@@ -70,7 +70,7 @@
                       if(i == 'img/image-2.jpg')
                       Container(
                           child: Column(children: [
-                            Text("Tugu", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
+                            Text("Pantai Selatan", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
                             Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
@@ -78,7 +78,7 @@
                       if(i == 'img/image-3.jpg')
                         Container(
                           child: Column(children: [
-                            Text("Pantai Jogja", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
+                            Text("Tugu Jogja", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
                             Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
@@ -86,7 +86,7 @@
                       if(i == 'img/image-4.jpg')
                         Container(
                           child: Column(children: [
-                            Text("Candi Borobudur", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
+                            Text("Candi Prambanan", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
                             Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
