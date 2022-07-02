@@ -13,7 +13,7 @@ class gallery extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
         title: Text
-          ("Articles", style: TextStyle (
+          ("Gallery", style: TextStyle (
             color: Color.fromRGBO(0, 139, 92, 1), 
             fontSize: 32, fontFamily: 'robotoSlab'),
         ),

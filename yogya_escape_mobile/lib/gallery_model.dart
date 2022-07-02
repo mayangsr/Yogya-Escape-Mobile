@@ -1,6 +1,5 @@
 class Place {
   String title;
-  // String subtittle;
   String imageUrl;
   double height;
 
