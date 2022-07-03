@@ -12,10 +12,14 @@ class MapPage extends StatefulWidget {
 class _MyHomePageState extends State<MapPage> {
 
   final LatLng pantaibaron = LatLng(-8.1288377,110.5449296,);
-  final LatLng parangtritis = LatLng(-8.0253554,110.2949525);
+  final LatLng parangtritis = LatLng(-8.0236813,110.3281033);
   final LatLng malioboro = LatLng(-7.7926402,110.3636573);
   final LatLng prambanan = LatLng(-7.75201,110.48709);
   final LatLng ratuboko = LatLng(-7.770531,110.4850384);
+  final LatLng candiijo = LatLng(-7.78541,110.5039671);
+  final LatLng keraton = LatLng(-7.8052792,110.3599759);
+  final LatLng alkid = LatLng(-7.8118374,110.3610104);
+  final LatLng hutanpinus = LatLng(-7.928474,110.4285021);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +51,22 @@ class _MyHomePageState extends State<MapPage> {
             tempat: ratuboko,
             title: 'Candi Ratu Boko',
           ),
-
+          MyMap(
+            tempat: candiijo,
+            title: 'Candi Ijo',
+          ),
+          MyMap(
+            tempat: keraton,
+            title: 'Keraton Yogyakarta',
+          ),
+          MyMap(
+            tempat: alkid,
+            title: 'Alun-alun Kidul Yogyakarta',
+          ),
+          MyMap(
+            tempat: hutanpinus,
+            title: 'Hutan Pinus Mangunan',
+          ),
         ],
       ),
     );
@@ -63,7 +82,6 @@ class MyMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final artikel = ModalRoute.of(context)!.settings.arguments as Post;
     return Card(
       child: Padding(
         padding: EdgeInsets.all(32.0),
@@ -74,7 +92,7 @@ class MyMap extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.red,
+                color: Color.fromRGBO(0, 139, 92, 1),
               ),
             ),
             Center(
@@ -89,7 +107,7 @@ class MyMap extends StatelessWidget {
                       markerId: MarkerId('tempat'),
                       position: tempat,
                       infoWindow: InfoWindow(
-                        title: 'Nama Tempat',
+                        title: title!,
                       ),
                     ),
                   ].toSet(),
@@ -107,3 +125,4 @@ class MyMap extends StatelessWidget {
   }
 }
 
+// referensi: https://www.udacoding.com/implementation-google-maps-in-flutter-2-0/
