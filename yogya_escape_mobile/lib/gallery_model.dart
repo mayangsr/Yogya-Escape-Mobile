@@ -14,7 +14,6 @@ class Place {
       Place("Prambanan", "img/prambanan.jpg", 150),
       Place("Malioboro", "img/Malioboro.jpeg", 220),
       Place("Pantai Gunung Kidul", "img/pantai gunung kidul.jpeg", 200),
-      
     ];
   }
 }
