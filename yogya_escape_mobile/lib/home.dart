@@ -58,12 +58,12 @@
                           child: Image.asset(i, width: 500, height: 200,)
                         ),
                       ),
-                      SizedBox( height: 10,),
+                      SizedBox( height: 20,),
                       if(i == 'img/image-1.jpg')
                         Container(
                           child: Column(children: [
-                            Text("Pantai Ngitun", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
-                            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                            Text("Pantai Ngetun", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
+                            Text("Pantai Ngetun adalah salah satu pantai berpasir putih yang tersembunyi di Kabupaten Gunungkidul. Pantai ini diapit oleh dua bukit atau tebing karang di kedua sisinya. Di sekitar pantai terdapat pepohonan rindang untuk berteduh sambil menikmati pemandangan",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
                         ),
@@ -71,7 +71,7 @@
                       Container(
                           child: Column(children: [
                             Text("Pantai Selatan", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
-                            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                            Text("Pantai di pesisir selatan Jawa selalu dikaitkan dengan mitos Ratu Pantai Selatan, Nyi Roro Kidul. Benar atau tidaknya mitos itu tidak ada yang tahu pasti. Namun, yang bisa dipastikan benar adalah keindahan berbagai pantai di Selatan Pulau Jawa.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
                         ),
@@ -79,7 +79,7 @@
                         Container(
                           child: Column(children: [
                             Text("Tugu Jogja", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
-                            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                            Text("Tugu Jogja merupakan landmark Kota Yogyakarta yang paling terkenal. Monumen ini berada tepat di tengah perempatan Jalan Pangeran Mangkubumi, Jalan Jendral Soedirman, Jalan A.M Sangaji dan Jalan Diponegoro.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
                         ),
@@ -87,7 +87,7 @@
                         Container(
                           child: Column(children: [
                             Text("Candi Prambanan", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
-                            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                            Text("Candi Prambanan adalah candi Hindu terbesar di Indonesia sekaligus salah satu candi yang terindah di Asia Tenggara. Menurut prasasti Siwagrha, candi ini mulai dibangun pada masa pemerintahan Rakai Pikatan (pertengahan abad ke-9) dari Kerajaan Mataram Kuno.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
                         ),
@@ -96,7 +96,7 @@
                         Container(
                           child: Column(children: [
                             Text("Malioboro", style:  TextStyle( fontSize: 25, fontWeight: FontWeight.w500, color: Color.fromRGBO(0, 139, 92, 1)),),
-                            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                            Text("Malioboro merupakan nama sebuah jalan yang ada di Jogja yang terkenal sebagai wisata belanja legendaris di Indonesia. Banyak wisatawan manca negara yang mengidentikkan jalan malioboro sebagai jogja, jadi tak lengkap rasanya berkunjung ke Jogja tanpa berkunjung ke Jalan Malioboro Jogja.",
                         style:  TextStyle( fontSize: 12, fontWeight: FontWeight.w500, color: Color.fromRGBO(35, 35, 35, 1)),),
                           ],),
                         ),
@@ -111,7 +111,7 @@
 
           ),
           Container(
-            margin : EdgeInsets.symmetric(horizontal: 20.0),
+            margin : EdgeInsets.symmetric(horizontal: 10.0),
                     child: Row(children: [
                       Container(
                         height: 130,
@@ -121,7 +121,20 @@
                           color: Color.fromRGBO(0, 128, 85, 0.6),
                         ),
                         alignment: Alignment.center,
-                        child: const Text('Bundle 1 \n murah \n makan siang'),
+                        
+                        child: Column(children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                            child: Column(
+                              children: [
+                                const Text('Bundle 1', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                const Text('1. Snack \n2. Makan Siang \n3. Makan Malam \n4. Aksesoris', style: TextStyle(color: Colors.white, fontSize: 10)),
+                              ],
+                            ),
+                          )
+                          
+                        ],)
+                        
                       ), Spacer(),
                       Container(
                         height: 130,
@@ -131,7 +144,19 @@
                           color: Color.fromRGBO(0, 128, 85, 0.6),
                         ),
                         alignment: Alignment.center,
-                        child: const Text('Bundle 2 \n murah \n makan siang'),
+                        child: Column(children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                            child: Column(
+                              children: [
+                                const Text('Bundle 2', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                const Text('1. Snack \n2. Makan Malam \n 3. Aksesoris', style: TextStyle(color: Colors.white, fontSize: 10)),
+                              ],
+                            ),
+                          )
+                          
+                        ],)
+                        // child: const Text('Bundle 2 \n murah \n makan siang',style: TextStyle(color: Colors.white)),
                       ), Spacer(),
                       Container(
                         height: 130,
@@ -141,7 +166,19 @@
                           color: Color.fromRGBO(0, 128, 85, 0.6),
                         ),
                         alignment: Alignment.center,
-                        child: const Text('Bundle 3 \n murah \n makan siang'),
+                        child: Column(children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                            child: Column(
+                              children: [
+                                const Text('Bundle 3', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                                const Text('1. Snack \n2. Aksesoris', style: TextStyle(color: Colors.white, fontSize: 10)),
+                              ],
+                            ),
+                          )
+                          
+                        ],)
+                        // child: const Text('Bundle 3 \n murah \n makan siang', style: TextStyle(color: Colors.white)),
                       )
                     ],),
                   )
