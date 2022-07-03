@@ -4,6 +4,9 @@
         android:label="yogya_escape_mobile"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- TODO: Add your API key here -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyAj_Vhf_uq2jk1B2yGbpLpugRtjLjj83CI"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

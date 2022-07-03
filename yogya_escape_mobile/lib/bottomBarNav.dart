@@ -24,7 +24,7 @@ class _MainBottomClassState extends State<MainBottomClass> {
     new gallery(),
     new guideListScreen(),
     new Articles(),
-    new Maps()
+    new MapPage()
   ];
 
   void onItemTapped(int index) {
