@@ -83,8 +83,11 @@ class MyMap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0)
+      ),
       child: Padding(
-        padding: EdgeInsets.all(32.0),
+        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
         child: Column(
           children: <Widget>[
             Text(
@@ -93,11 +96,13 @@ class MyMap extends StatelessWidget {
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Color.fromRGBO(0, 139, 92, 1),
+                  fontFamily: 'robotoSlab'
               ),
             ),
+            SizedBox(height: 10,),
             Center(
               child: SizedBox(
-                width: 300.0,
+                width: MediaQuery.of(context).size.width,
                 height: 300.0,
                 child: GoogleMap(
                   initialCameraPosition:
