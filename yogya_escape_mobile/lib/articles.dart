@@ -10,7 +10,7 @@ import 'article_detail.dart';
 
 Future<List<Post>> fetchPost() async {
   final response =
-      await http.get(Uri.parse('https://mocki.io/v1/96453721-423c-4dde-976e-ebe5dab93c88'));
+      await http.get(Uri.parse('http://10.0.2.2/tubesapi/read.php'));
 
   if (response.statusCode == 200) {
     final parsed = json.decode(response.body).cast<Map<String, dynamic>>();

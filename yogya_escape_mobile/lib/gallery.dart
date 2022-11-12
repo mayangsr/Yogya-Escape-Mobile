@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:yogya_escape_mobile/gallery_detail.dart';
 import 'package:yogya_escape_mobile/gallery_model.dart';
-import 'package:yogya_escape_mobile/gallery_detail.dart';
 
 class gallery extends StatelessWidget {
   final placeList = Place.generatePlace();
@@ -30,7 +29,7 @@ class gallery extends StatelessWidget {
               mainAxisSpacing: 16,
               itemCount: placeList.length,
                 crossAxisCount: 4, 
-                itemBuilder: (context, index) => PlaceItem(placeList[index]), 
+                itemBuilder: (context, index) => gallery_detail(placeList[index]), 
                 staggeredTileBuilder: (_) => StaggeredTile.fit(2) 
             ),
           )

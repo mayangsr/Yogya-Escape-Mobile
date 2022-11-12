@@ -1,72 +1,133 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart' as latlng;
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'article_model.dart';
 
-class Maps extends StatefulWidget {
-  const Maps({Key? key}) : super(key: key);
-
+class MapPage extends StatefulWidget {
   @override
-  State<Maps> createState() => _MapsState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MapsState extends State<Maps> {
-var points = [
-  latlng.LatLng(-8.025378,110.3200166),
-  latlng.LatLng(-7.7925711,110.3636543),
-  latlng.LatLng(-8.1290121,110.5464972),
-  latlng.LatLng(-7.7520153,110.4892787),
-  latlng.LatLng(-7.7705363,110.4872271),];
-@override
-Widget build(BuildContext context) {
-return Scaffold(
-appBar: AppBar(),
-  body: 
-  
-  
-  FlutterMap(
-    options: MapOptions(
-      center: latlng.LatLng(-7.797068, 110.370529),
-      minZoom: 10.0,
-    ),
-  layers: [
-    TileLayerOptions(
-    urlTemplate:
-      "https://api.mapbox.com/styles/v1/fauzihzm/cl4bcdih2000o15s7odtbf1d7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZmF1emloem0iLCJhIjoiY2w0YmJlZHNkMWtkcjNjbHJtNDlzZTBleiJ9.6HamY-AGJH_lRitEbLpoKg",
-      additionalOptions: {
-      'accessToken':
-      'pk.eyJ1IjoiZmF1emloem0iLCJhIjoiY2w0YmJlZHNkMWtkcjNjbHJtNDlzZTBleiJ9.6HamY-AGJH_lRitEbLpoKg',
-      'id': 'mapbox.mapbox-streets-v8'
-    },
+class _MyHomePageState extends State<MapPage> {
+
+  final LatLng pantaibaron = LatLng(-8.1288377,110.5449296,);
+  final LatLng parangtritis = LatLng(-8.0236813,110.3281033);
+  final LatLng malioboro = LatLng(-7.7926402,110.3636573);
+  final LatLng prambanan = LatLng(-7.75201,110.48709);
+  final LatLng ratuboko = LatLng(-7.770531,110.4850384);
+  final LatLng candiijo = LatLng(-7.78541,110.5039671);
+  final LatLng keraton = LatLng(-7.8052792,110.3599759);
+  final LatLng alkid = LatLng(-7.8118374,110.3610104);
+  final LatLng hutanpinus = LatLng(-7.928474,110.4285021);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Maps", style: TextStyle(color: Color.fromRGBO(0, 139, 92, 1), fontSize: 32, fontFamily: 'robotoSlab'),),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        centerTitle: true,
       ),
-      MarkerLayerOptions(
-        markers: [
-          Marker(
-            width: 80,
-            height: 80,
-            point: latlng.LatLng(-7.7705363,110.4872271,),
-            builder: (ctx) => Container(
-            child: Icon(Icons.location_on),
-            ),
-            
+      body: ListView(
+        children: <Widget>[
+          MyMap(
+            tempat: pantaibaron,
+            title: 'Pantai Baron',
           ),
-          Marker(
-            width: 80,
-            height: 80,
-            point: points[0],
-            builder: (ctx) => Container(
-            child: Icon(Icons.location_on),
-            ),
-            
+          MyMap(
+            tempat: parangtritis,
+            title: 'Pantai Parangtritis',
           ),
+          MyMap(
+            tempat: malioboro,
+            title: 'Malioboro',
+          ),
+          MyMap(
+            tempat: prambanan,
+            title: 'Candi Prambanan',
+          ),    
+          MyMap(
+            tempat: ratuboko,
+            title: 'Candi Ratu Boko',
+          ),
+          MyMap(
+            tempat: candiijo,
+            title: 'Candi Ijo',
+          ),
+          MyMap(
+            tempat: keraton,
+            title: 'Keraton Yogyakarta',
+          ),
+          MyMap(
+            tempat: alkid,
+            title: 'Alun-alun Kidul Yogyakarta',
+          ),
+          MyMap(
+            tempat: hutanpinus,
+            title: 'Hutan Pinus Mangunan',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class MyMap extends StatelessWidget {
+  const MyMap({Key? key, required this.tempat, this.title})
+      : super(key: key);
+
+  final LatLng tempat;
+  final String? title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0)
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
+        child: Column(
+          children: <Widget>[
+            Text(
+              title!,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(0, 139, 92, 1),
+                  fontFamily: 'robotoSlab'
+              ),
+            ),
+            SizedBox(height: 10,),
+            Center(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 300.0,
+                child: GoogleMap(
+                  initialCameraPosition:
+                      CameraPosition(target: tempat, zoom: 15.0),
+                  markers: <Marker>[
+                    Marker(
+                      markerId: MarkerId('tempat'),
+                      position: tempat,
+                      infoWindow: InfoWindow(
+                        title: title!,
+                      ),
+                    ),
+                  ].toSet(),
+                  gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>[
+                    Factory<OneSequenceGestureRecognizer>(
+                        () => ScaleGestureRecognizer()),
+                  ].toSet(),
+                ),
+              ),
+            )
           ],
         ),
-        // new PolylineLayerOptions(polylines: [new Polyline(points: points, strokeWidth: 2.0, color:
-        // Colors.red)
-        // ])
-        ],
-        ));
-        }
-    
+      ),
+    );
   }
+}
+
+// referensi: https://www.udacoding.com/implementation-google-maps-in-flutter-2-0/

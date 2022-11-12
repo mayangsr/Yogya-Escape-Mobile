@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yogya_escape_mobile/gallery_model.dart';
 
-class PlaceItem extends StatelessWidget {
+class gallery_detail extends StatelessWidget {
   final Place place;
-  PlaceItem(this.place);
+  gallery_detail(this.place);
   
   @override
   Widget build(BuildContext context) {
